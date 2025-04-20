@@ -1,0 +1,410 @@
+/* General Styling */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Glowing Button */
+.cv-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: transparent;
+    color: #000;
+    font-size: 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 30px;
+    animation: glowing 1.5s infinite alternate;
+}
+
+@keyframes glowing {
+    from {
+        text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+    }
+
+    to {
+        text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+    }
+}
+
+.cv-button:hover {
+    background-color: black;
+    color: #000;
+}
+
+/* CV Page Styling */
+#cv-header {
+    text-align: center;
+    padding: 100px 20px;
+    background: #0a0a0a;
+}
+
+#cv-header h1 {
+    font-size: 4rem;
+    color: #00ffff;
+}
+
+.cv-section {
+    margin: 50px 0;
+    padding: 30px;
+    background: #111;
+    border-radius: 10px;
+}
+
+.cv-section h2 {
+    font-size: 2rem;
+    color: #00ffff;
+    border-left: 4px solid #00ffff;
+    padding-left: 15px;
+}
+
+.cv-section p,
+.cv-section ul {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cv-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.cv-section li {
+    padding: 5px 0;
+}
+
+.reveal {
+    animation: revealAnimation 1s ease-out;
+}
+
+@keyframes revealAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    #cv-header h1 {
+        font-size: 2rem;
+    }
+
+    .cv-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* General skill section styles */
+#skills {
+    margin-top: 50px;
+}
+
+#skills h2 {
+    font-size: 2rem;
+    color: #00ffff;
+    border-left: 4px solid #00ffff;
+    padding-left: 15px;
+}
+
+.skill {
+    margin-bottom: 30px;
+}
+
+.skill h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    /* Align dots and text horizontally */
+    gap: 20px;
+    /* Add space between dots and skill name */
+}
+
+/* Dots container */
+.dots {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    /* Default gray color for empty dots */
+    transition: all 1s ease-in-out;
+}
+
+/* Different dot colors based on the rating */
+.dots[data-rating="5"]::before {
+    content: "● ● ● ● ●";
+    /* 5 filled dots */
+    color: #00ffff;
+    /* Gold color for filled dots */
+}
+
+.dots[data-rating="4"]::before {
+    content: "● ● ● ● ○";
+    /* 4 filled dots, 1 empty */
+    color: #00ffff;
+    /* Gold color for filled dots */
+}
+
+.dots[data-rating="3"]::before {
+    content: "● ● ● ○ ○";
+    /* 3 filled dots, 2 empty */
+    color: #00ffff;
+    /* Gold color for filled dots */
+}
+
+.dots[data-rating="2"]::before {
+    content: "● ● ○ ○ ○";
+    /* 2 filled dots, 3 empty */
+    color: #00ffff;
+    /* Gold color for filled dots */
+}
+
+.dots[data-rating="1"]::before {
+    content: "● ○ ○ ○ ○";
+    /* 1 filled dot, 4 empty */
+    color: #00ffff;
+    /* Gold color for filled dots */
+}
+
+.dots[data-rating="0"]::before {
+    content: "○ ○ ○ ○ ○";
+    /* 0 filled dots, all empty */
+    color: #2c3e50;
+    /* Gray color for empty dots */
+}
+
+/* Glowing effect (optional) */
+@keyframes glowing {
+    0% {
+        color: #00ffff;
+        text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+    }
+
+    100% {
+        color: #00ffff;
+        text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #skills h2 {
+        font-size: 1.5rem;
+    }
+
+    .skill h3 {
+        font-size: 1.2rem;
+    }
+
+    .dots {
+        font-size: 1.2rem;
+    }
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+/* Header Section with Background Image */
+#home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    background: url('img/840843081452.jpg') no-repeat center center/cover;
+    /* Background image */
+    color: #fff;
+    /* White text color */
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay */
+    z-index: 1;
+    /* Ensure the overlay is on top of the image */
+}
+
+
+.container {
+    position: relative;
+    z-index: 2;
+    /* Text on top of the overlay */
+}
+
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+    background: #0a0a0a;
+}
+
+header h1 {
+    font-size: 4rem;
+    color: #00ffff;
+    animation: glow 2s infinite alternate;
+}
+
+.typed-text {
+    color: white;
+    font-size: 2rem;
+    margin-top: 10px;
+    height: 30px;
+}
+
+nav {
+    background: #111;
+    padding: 10px;
+    text-align: center;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00ffff;
+    bottom: -2px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00ffff;
+    border-left: 4px solid #00ffff;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills-list li {
+    background: #111;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #00ffff;
+    transition: all 0.3s;
+}
+
+.skills-list li:hover {
+    transform: scale(1.1);
+    background-color: #00ffff;
+    color: #000;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #00ffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00ffff;
+}
+
+footer {
+    text-align: center;
+    background: #111;
+    padding: 20px;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00ffff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    box-shadow: 0 0 10px #00ffff;
+    transition: 0.3s;
+}
+
+#scrollToTop:hover {
+    background: #0ff;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00ffff;
+    }
+
+    to {
+        text-shadow: 0 0 20px #00ffff;
+    }
+}
+
+@media(max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.name-glow {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
